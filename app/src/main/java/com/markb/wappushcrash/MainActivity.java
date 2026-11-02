@@ -187,6 +187,7 @@ public class MainActivity extends Activity {
         };
         for (int src : sources) {
             try {
+                @SuppressLint("MissingPermission")
                 String n = sm.getPhoneNumber(subId, src);
                 if (n != null && !n.isEmpty()) return n;
             } catch (Exception ignored) {}
