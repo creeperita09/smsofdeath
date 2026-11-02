@@ -175,6 +175,7 @@ public class MainActivity extends Activity {
             getSystemService(Context.TELEPHONY_SUBSCRIPTION_SERVICE);
         int subId = s.getSubscriptionId();
         try {
+            @SuppressLint("MissingPermission")
             String n = sm.getPhoneNumber(subId);
             if (n != null && !n.isEmpty()) return n;
         } catch (Exception ignored) {}
